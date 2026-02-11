@@ -1,11 +1,33 @@
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
 /* body{
+   
     background-color: black;
     color: white
-} */
+}  */
+.logo img {
+   width: 32px;
+}
 
- .left{
-    width: 25vw;
- }
-  .right{
-    width: 75vw;
- }
+.left {
+   width: 25vw;
+   padding: 34px;
+}
+
+.right {
+   width: 75vw;
+}
+
+.home ul li {
+   width: 14px;
+   gap: 15px;
+   display: flex;
+   list-style: none;
+}
+
+.invert {
+   filter: invert(1);
+}
