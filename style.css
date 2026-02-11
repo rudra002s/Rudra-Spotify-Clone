@@ -14,11 +14,15 @@
 
 .left {
    width: 25vw;
-   padding: 34px;
+   padding: 10px;
 }
 
 .right {
    width: 75vw;
+}
+
+.home {
+   padding: 10px;
 }
 
 .home ul li {
@@ -26,6 +30,7 @@
    gap: 15px;
    display: flex;
    list-style: none;
+   padding-top: 14px;
 }
 
 .invert {
