@@ -87,9 +87,14 @@ body {
 
 .cardContainer {
    display: flex;
-   margin: 18px;
-   gap: 10px;
-   flex-wrap: wrap;
+   gap: 18px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   padding-bottom: 20px;
+}
+
+.cardContainer::-webkit-scrollbar {
+   display: none;
 }
 
 .card {
@@ -97,6 +102,9 @@ body {
    padding: 10px;
    border-radius: 8px;
    background-color: #181818;
+   position: relative;
+   width: 180px;
+   flex-shrink: 0;
 }
 
 .card img {
@@ -120,4 +128,48 @@ body {
 
 .card>* {
    margin-top: 8px;
+}
+
+.play {
+   width: 48px;
+   height: 48px;
+   background: #1fdf64;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 6px;
+   box-sizing: border-box;
+   position: absolute;
+   top: 155px;
+   right: 15px;
+   opacity: 0;
+   transform: translateY(10px);
+   transition: all 0.3s ease;
+}
+
+.card:hover .play {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.scrollBtns {
+   display: flex;
+   gap: 8px;
+   margin-bottom: 10px;
+}
+
+.scrollBtns button {
+   background: #121212;
+   border: none;
+   color: white;
+   width: 32px;
+   height: 32px;
+   border-radius: 50%;
+   cursor: pointer;
+   font-size: 20px;
+}
+
+.scrollBtns button:hover {
+   background: #2a2a2a;
 }
