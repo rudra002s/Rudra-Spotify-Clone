@@ -27,7 +27,11 @@
  .rounded {
     border-radius: 7px;
  }
- 
+
  .m-1{
    margin: 5px;
+ }
+
+ .p-1{
+   padding: 10px;
  }

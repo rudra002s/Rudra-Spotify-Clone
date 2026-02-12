@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 24 24" 
+     width="48" 
+     height="48" 
+     fill="none">
+
+  <!-- Two vertical bars -->
+  <rect x="3" y="4" width="2.5" height="16" rx="1.25" fill="white"/>
+  <rect x="8" y="4" width="2.5" height="16" rx="1.25" fill="white"/>
+
+  <!-- Folder shape -->
+  <path d="M14 4 
+           L20 6.5 
+           V20 
+           L14 18 
+           Z"
+        fill="white"/>
+</svg>
