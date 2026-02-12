@@ -1,11 +1,10 @@
-<script>
-    const container = document.querySelector(".cardContainer");
+const container = document.querySelector(".cardContainer");
 
-    function scrollRight() {
-        container.scrollBy({ left: 300, behavior: "smooth" })
+function scrollCardsLeft() {
+    container.scrollLeft -= 300;
 }
 
-    function scrollLeft() {
-        container.scrollBy({ left: -300, behavior: "smooth" })
+function scrollCardsRight() {
+    container.scrollLeft += 300;
 }
-</script>
+
