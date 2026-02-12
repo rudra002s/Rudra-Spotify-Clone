@@ -41,3 +41,32 @@
 .invert {
    filter: invert(1);
 }
+
+.heading {
+   width: 100%;
+   gap: 15px;
+   display: flex;
+   padding-top: 14px;
+   padding: 23px 14px;
+   font-weight: bold;
+   align-items: center;
+   font-size: 13px;
+}
+
+.heading img {
+   width: 30px;
+}
+
+.library{
+   min-height: 15vh;
+} 
+
+.footer {
+   display: flex;
+   gap: 13px;
+   font-size: 10px;
+}
+
+.footer a {
+   color: grey;
+}
