@@ -6,11 +6,11 @@
    font-family: "Roboto", sans-serif;
 }
 
-/* body{
-   
-    background-color: black;
-    color: white
-}  */
+body {
+
+   background-color: black;
+   color: white
+}
 
 .logo img {
    width: 32px;
@@ -23,6 +23,7 @@
 
 .right {
    width: 75vw;
+   margin: 16px 0;
 }
 
 .home {
@@ -57,16 +58,29 @@
    width: 30px;
 }
 
-.library{
-   min-height: 15vh;
-} 
+.library {
+   min-height: 71vh;
+   position: relative;
+}
 
 .footer {
    display: flex;
    gap: 13px;
    font-size: 10px;
+   position: absolute;
+   bottom: 0;
 }
 
 .footer a {
    color: grey;
 }
+
+.header {
+   display: flex;
+   justify-content: space-between;
+}
+
+.header>* {
+   padding: 20px;
+}
+
