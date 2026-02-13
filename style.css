@@ -80,6 +80,7 @@ body {
    display: flex;
    justify-content: space-between;
    background-color: rgb(34, 34, 34);
+   height: 85px;
 }
 
 .header>* {
@@ -92,6 +93,7 @@ body {
    overflow-x: auto;
    scroll-behavior: smooth;
    padding-bottom: 20px;
+   padding-left: 18px;
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -158,6 +160,7 @@ body {
    display: flex;
    gap: 8px;
    margin-bottom: 10px;
+   padding-left: 8px;
 }
 
 .scrollBtns button {
@@ -169,8 +172,51 @@ body {
    border-radius: 50%;
    cursor: pointer;
    font-size: 20px;
+   justify-content: center;
 }
 
 .scrollBtns button:hover {
    background: #2a2a2a;
+}
+
+.buttons>* {
+   margin: 0 12px;
+}
+
+.signupbtn {
+   background-color: rgb(34, 34, 34);
+   ;
+   color: #8f8f8f;
+   font-weight: bold;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   font-size: 14px;
+   text-align: center;
+}
+
+.signupbtn:hover {
+   font-size: 15px;
+   color: #ffffff;
+}
+
+.loginbtn {
+   background-color: white;
+   color: black;
+   border-radius: 21px;
+   padding: 10px;
+   font-weight: bold;
+   width: 80px;
+   cursor: pointer;
+   text-align: center;
+   font-size: 16px;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loginbtn:hover {
+   font-weight: bolder;
+   padding: 12px;
+   font-size: 17px;
+   transform: scale(1.06);
+   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
