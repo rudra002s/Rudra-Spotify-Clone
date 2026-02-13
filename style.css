@@ -17,13 +17,14 @@ body {
 }
 
 .left {
-   width: 25vw;
-   padding: 10px;
+   width: 27vw;
+   padding: 8px;
 }
 
 .right {
-   width: 75vw;
+   width: 73vw;
    margin: 16px 0;
+   position: relative;
 }
 
 .home {
@@ -218,5 +219,13 @@ body {
    padding: 12px;
    font-size: 17px;
    transform: scale(1.06);
-   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.playbar{
+   bottom: 0;
+   position: absolute;
+   background-color: #1fdf64;
+   width: 100%;
+   padding: 12px;
 }
