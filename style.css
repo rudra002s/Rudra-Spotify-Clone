@@ -226,7 +226,7 @@ body {
    bottom: 0;
    position: absolute;
    background-color: #1fdf64;
-   width: 100%;
+   width: 90%;
    padding: 12px;
 }
 
@@ -234,4 +234,12 @@ body {
    justify-content: center;
    gap: 12px;
    display: flex;
+}
+
+.songList ul{
+   padding: 0 42px;
+}
+
+.songList ul li{
+   list-style-type: decimal;
 }
