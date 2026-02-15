@@ -39,26 +39,18 @@ async function getSongs() {
 }
 
 async function main() {
-    // 1. Get the list of songs
+    // Get the list of all the songs
     let songs = await getSongs()
-    
-    // 2. Show songs in the library sidebar
+    console.log(songs)
+
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
-    songUL.innerHTML = "" 
-
     for (const song of songs) {
-        
-        let displayName = song.replaceAll("%20", " ");
-        songUL.innerHTML = songUL.innerHTML + `<li> ${displayName} </li>`
+        songUL.innerHTML = songUL.innerHTML + `<li> ${song.replaceAll("%20", " ")} </li>`;
     }
 
-
-    if (songs.length > 0) {
-        var audio = new Audio("/songs/" + songs[0].replaceAll("%20", "/"));
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime);
-        });
-    }
+    // Play the first song
+    var audio = new Audio(songs[0]);
+    // audio.play();
 }
 
 main()
