@@ -49,7 +49,7 @@ async function main() {
     }
 
     // Play the first song
-    var audio = new Audio(songs[0]);
+    // var audio = new Audio("/songs/" + songs[0]);
     // audio.play();
 }
 
