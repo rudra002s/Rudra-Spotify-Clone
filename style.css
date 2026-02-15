@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
    margin: 0px;
@@ -7,9 +7,8 @@
 }
 
 body {
-
    background-color: black;
-   color: white
+   color: white;
 }
 
 .logo img {
@@ -17,12 +16,12 @@ body {
 }
 
 .left {
-   width: 27vw;
+   width: 25vw;
    padding: 8px;
 }
 
 .right {
-   width: 73vw;
+   width: 75vw;
    margin: 16px 0;
    position: relative;
 }
@@ -186,7 +185,6 @@ body {
 
 .signupbtn {
    background-color: rgb(34, 34, 34);
-   ;
    color: #8f8f8f;
    font-weight: bold;
    border: none;
@@ -211,7 +209,9 @@ body {
    cursor: pointer;
    text-align: center;
    font-size: 16px;
-   transition: transform 0.2s ease, box-shadow 0.2s ease;
+   transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 }
 
 .loginbtn:hover {
@@ -222,7 +222,7 @@ body {
    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.playbar{
+.playbar {
    bottom: 0;
    position: absolute;
    background-color: #1fdf64;
@@ -230,20 +230,48 @@ body {
    padding: 12px;
 }
 
-.songbtn{
+.songbtn {
    justify-content: center;
    gap: 12px;
    display: flex;
 }
 
-.songList ul{
-   padding: 0 42px;
+.songList {
+   height: 644px;
+   overflow: auto;
+   margin: 44px 0;
 }
 
-.songList ul li{
+.songList ul {
+   padding: 0 10px;
+}
+
+.songList ul li {
    list-style-type: decimal;
    display: flex;
-   gap: 34px;
+   gap: 12px;
    cursor: pointer;
-   padding: 12px 0;
+   padding: 12px;
+   border: 1px solid white;
+   margin: 12px 0;
+   border-radius: 5px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.songList info {
+   font-size: 13px;
+   width: 344px;
+}
+
+.playnow {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.playnow span {
+   font-size: 10px;
+   width: 100px;
+   padding: 12px;
 }
