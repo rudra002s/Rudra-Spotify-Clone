@@ -41,7 +41,6 @@ async function getSongs() {
 async function main() {
     // Get the list of all the songs
     let songs = await getSongs();
-    console.log(songs);
 
     let songUL = document
         .querySelector(".songList")
@@ -56,13 +55,14 @@ async function main() {
                   <div class=""playnow>
                     <span>Play Now</span>
                     <img class="invert" src="playNow.svg" alt="">
-                  </div>
-         </li>`;
+                  </div> li>`;
     }
+
 
     // Play the first song
     //   var audio = new Audio("/songs/" + songs[9]);
     //   audio.play();
+
 }
 
 main();
