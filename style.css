@@ -223,11 +223,15 @@ body {
 }
 
 .playbar {
-   bottom: 0;
-   position: absolute;
-   background-color: #1fdf64;
+   bottom: 30px;
+   position: fixed;
+   border-radius: 30px;
+   /* filter: invert(1); */
+   background-color: rgb(98, 98, 98);
    width: 97%;
    padding: 12px;
+   position: fixed;
+   width: 70vw;
 }
 
 .songbtn {
@@ -237,9 +241,9 @@ body {
 }
 
 .songList {
-   height: 644px;
+   height: 544px;
    overflow: auto;
-   margin: 44px 0;
+   margin-bottom: 44px;
 }
 
 .songList ul {

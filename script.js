@@ -10,7 +10,6 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            // FIX: This split looks for the song name regardless of / or \
             let songName =
                 element.href.split("/songs/")[1] ||
                 element.href.split("%5Csongs%5C")[1];
@@ -30,7 +29,6 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            // Updated split to handle both forward and backward slashes
             let splitArray = element.href.split(/songs\/|%5Csongs%5C/);
             if (splitArray.length > 1) {
                 songs.push(splitArray[1]);
@@ -63,7 +61,7 @@ async function main() {
     }
 
     // Play the first song
-    //   var audio = new Audio("/songs/" + songs[1]);
+    //   var audio = new Audio("/songs/" + songs[9]);
     //   audio.play();
 }
 
