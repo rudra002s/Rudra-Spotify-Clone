@@ -243,6 +243,10 @@ body {
    display: flex;
 }
 
+.songbtn img{
+   cursor: pointer;
+}
+
 .songList {
    height: 544px;
    overflow: auto;

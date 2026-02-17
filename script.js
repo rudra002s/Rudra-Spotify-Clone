@@ -77,6 +77,19 @@ async function main() {
             playMusic(songName + ".mp3");
         })
     })
+
+    //Attach an element listener to previous,play,forward
+    play.addEventListener("click",()=>{
+        if(currentSong.paused){
+            currentSong.play()
+            play.src="pause.svg"
+        }
+        else{
+            currentSong.pause()
+            play.src="play.svg"
+        }
+    })
+
 }
 
 main();
