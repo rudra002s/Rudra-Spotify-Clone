@@ -312,3 +312,9 @@ body {
    display: flex;
    justify-content: space-between;
 }
+
+.songinfo, .songtime{
+   color: rgb(0, 0, 0);
+   font-weight: bold;
+   padding: 0 12px;
+}

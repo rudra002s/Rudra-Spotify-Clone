@@ -1,5 +1,19 @@
 console.log("LETS GO");
-let currentSong=new Audio();
+let currentSong = new Audio();
+
+function secondsToMinutesSeconds(seconds) {
+    if (isNaN(seconds) || seconds < 0) {
+        return "00:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
+    return `${formattedMinutes}:${formattedSeconds}`;
+}
 
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:3000/songs/");
@@ -20,13 +34,13 @@ async function getSongs() {
     return songs;
 }
 
-const playMusic=(track)=>{
+const playMusic = (track) => {
     // let audio=new Audio("/songs/"+track)
-    currentSong.src="/songs/"+track
+    currentSong.src = "/songs/" + track
     currentSong.play()
-    
-    document.querySelector(".songinfo").innerHTML=track
-    document.querySelector(".songtime").innerHTML="00:00/00:00"
+
+    document.querySelector(".songinfo").innerHTML = track
+    document.querySelector(".songtime").innerHTML = "00:00/00:00"
 
 }
 
@@ -51,7 +65,7 @@ async function getSongs() {
 
 async function main() {
 
-    
+
 
     // Get the list of all the songs
     let songs = await getSongs();
@@ -66,7 +80,7 @@ async function main() {
                   <div class="info">
                     <div>${song.replaceAll("%20", " ").replaceAll(".mp3", "")}</div>
                   </div>
-                  <div class="playnow">
+                  <div class=""playnow>
                     <span>Play Now</span>
                     <img class="invert" src="playNow.svg" alt="">
                   </div> </li>`;
@@ -83,15 +97,21 @@ async function main() {
     })
 
     //Attach an element listener to previous,play,forward
-    play.addEventListener("click",()=>{
-        if(currentSong.paused){
+    play.addEventListener("click", () => {
+        if (currentSong.paused) {
             currentSong.play()
-            play.src="pause.svg"
+            play.src = "pause.svg"
         }
-        else{
+        else {
             currentSong.pause()
-            play.src="play.svg"
+            play.src = "play.svg"
         }
+    })
+
+    //Listen for timeupdate event
+    currentSong.addEventListener("timeupdate", () => {
+        console.log(currentSong.currentTime, currentSong.duration)
+        document.querySelector(".songtime").innerHTML=`${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
     })
 
 }
