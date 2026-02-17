@@ -24,6 +24,10 @@ const playMusic=(track)=>{
     // let audio=new Audio("/songs/"+track)
     currentSong.src="/songs/"+track
     currentSong.play()
+    
+    document.querySelector(".songinfo").innerHTML=track
+    document.querySelector(".songtime").innerHTML="00:00/00:00"
+
 }
 
 async function getSongs() {
@@ -62,7 +66,7 @@ async function main() {
                   <div class="info">
                     <div>${song.replaceAll("%20", " ").replaceAll(".mp3", "")}</div>
                   </div>
-                  <div class=""playnow>
+                  <div class="playnow">
                     <span>Play Now</span>
                     <img class="invert" src="playNow.svg" alt="">
                   </div> </li>`;
