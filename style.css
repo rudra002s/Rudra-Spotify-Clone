@@ -243,7 +243,7 @@ body {
    display: flex;
 }
 
-.songbtn img{
+.songbtn img {
    cursor: pointer;
 }
 
@@ -308,12 +308,13 @@ body {
    transition: left 0.5s;
 }
 
-.abovebar{
+.abovebar {
    display: flex;
    justify-content: space-between;
 }
 
-.songinfo, .songtime{
+.songinfo,
+.songtime {
    color: rgb(0, 0, 0);
    font-weight: bold;
    padding: 0 12px;
