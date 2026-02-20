@@ -34,10 +34,12 @@ async function getSongs() {
     return songs;
 }
 
-const playMusic = (track) => {
+const playMusic = (track,pause=false) => {
     // let audio=new Audio("/songs/"+track)
     currentSong.src = "/songs/" + track
-    currentSong.play()
+    if(!pause){
+        currentSong.play()
+    }
 
     document.querySelector(".songinfo").innerHTML = track
     document.querySelector(".songtime").innerHTML = "00:00/00:00"
@@ -69,6 +71,7 @@ async function main() {
 
     // Get the list of all the songs
     let songs = await getSongs();
+    playMusic(songs[0],true)
 
     let songUL = document
         .querySelector(".songList")
@@ -112,6 +115,8 @@ async function main() {
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration)
         document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        //to make the player circle move
+        document.querySelector(".circle").style.left=(currentSong.currentTime/ currentSong.duration)*100+"%"
     })
 
 }
