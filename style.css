@@ -232,9 +232,15 @@ body {
    padding: 12px;
    position: fixed;
    width: 72vw;
-   height: 40px;
+   min-height: 80px;
    justify-content: center;
    align-items: center;
+}
+
+.nav{
+    justify-content: center;
+    align-items:center;
+    gap:10px;
 }
 
 .songbtn {
@@ -245,6 +251,10 @@ body {
 
 .songbtn img {
    cursor: pointer;
+}
+
+.hamburger {
+   display: none;
 }
 
 .songList {
@@ -322,7 +332,7 @@ body {
 }
 
 @media (max-width: 1400px) {
-   
+
    .left {
       background-color: red;
       position: absolute;
@@ -340,4 +350,8 @@ body {
       width: 95vw;
    }
 
-} 
+   .hamburger {
+      display: block;
+   }
+
+}
