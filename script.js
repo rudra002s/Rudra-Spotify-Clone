@@ -1,5 +1,6 @@
 console.log("LETS GO");
 let currentSong = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -73,7 +74,7 @@ async function main() {
 
 
     // Get the list of all the songs
-    let songs = await getSongs();
+    songs = await getSongs();
 
     let savedSong = localStorage.getItem("lastSong")
     let encodedSavedSong = encodeURIComponent(savedSong)
@@ -125,7 +126,7 @@ async function main() {
     //Listen for timeupdate event
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration)
-        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`
         //to make the player circle move
         document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%"
     })
@@ -134,17 +135,40 @@ async function main() {
     document.querySelector(".seekbar").addEventListener("click", e => {
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100
         document.querySelector(".circle").style.left = percent + "%"
-        currentSong.currentTime = ((currentSong.duration)*percent)/100
+        currentSong.currentTime = ((currentSong.duration) * percent) / 100
     })
 
     //Add an event listener for hamburger
-    document.querySelector(".hamburger").addEventListener("click",()=>{
-        document.querySelector(".left").style.left="0"
+    document.querySelector(".hamburger").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "0"
     })
 
     //Add an event listener for cross
-    document.querySelector(".cross").addEventListener("click",()=>{
-        document.querySelector(".left").style.left="-120%"
+    document.querySelector(".cross").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-120%"
+    })
+
+    //Add an event listener to previous and forward
+    previous.addEventListener("click", () => {
+        console.log("Previous Clicked")
+        console.log(currentSong)
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+
+        if ((index - 1) >=0) {
+            playMusic(songs[index - 1])
+        }
+    })
+
+    forward.addEventListener("click", () => {
+        currentSong.pause()
+        console.log("Forward Clicked")
+
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+
+        if ((index + 1) < songs.length) {
+            playMusic(songs[index + 1])
+        }
+
     })
 
 }

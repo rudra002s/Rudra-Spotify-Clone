@@ -54,6 +54,14 @@ body {
    font-size: 13px;
 }
 
+.TrendingSongs{
+   padding: 16px;
+}
+
+.TrendingSongs h1{
+   padding: 16px;
+}
+
 .heading img {
    width: 30px;
 }
@@ -81,8 +89,7 @@ body {
    justify-content: space-between;
    background-color: rgb(34, 34, 34);
    height: 85px;
-      padding-left:16px;
-
+   padding-left: 16px;
 }
 
 .header>* {
@@ -335,6 +342,20 @@ body {
    padding: 0 12px;
 }
 
+.songinfo {
+    width: 250px;
+    text-align: left;
+}
+
+.songtime {
+    width: 250px;
+    text-align: right;
+}
+
+.cross {
+   display: none;
+}
+
 @media (max-width: 1400px) {
 
    .left {
@@ -358,7 +379,7 @@ body {
 
    .right {
       width: 100vw;
-            margin-left:0;
+      margin-left: 0;
 
    }
 
@@ -372,4 +393,7 @@ body {
       display: block;
    }
 
+   .cross {
+      display: block;
+   }
 }
