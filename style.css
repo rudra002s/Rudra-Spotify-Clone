@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root{
+   --a:0
+}
+
 * {
    margin: 0px;
    padding: 0px;
@@ -117,6 +121,12 @@ body {
    position: relative;
    width: 180px;
    flex-shrink: 0;
+   transition: all 1.5s;
+}
+
+.card:hover{
+   background-color: black;
+   cursor: pointer;
 }
 
 .card img {
@@ -155,7 +165,7 @@ body {
    position: absolute;
    top: 155px;
    right: 15px;
-   opacity: 0;
+   opacity: var(--a);
    transform: translateY(10px);
    transition: all 0.3s ease;
 }
@@ -163,6 +173,7 @@ body {
 .card:hover .play {
    opacity: 1;
    transform: translateY(0);
+   --a:1
 }
 
 .scrollBtns {
@@ -398,7 +409,6 @@ body {
    .right {
       width: 100vw;
       margin-left: 0;
-
    }
 
    .playbar {
@@ -414,4 +424,5 @@ body {
    .cross {
       display: block;
    }
+
 }
