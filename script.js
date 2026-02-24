@@ -142,6 +142,11 @@ async function main() {
         document.querySelector(".left").style.left="0"
     })
 
+    //Add an event listener for cross
+    document.querySelector(".cross").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="-120%"
+    })
+
 }
 
 main();

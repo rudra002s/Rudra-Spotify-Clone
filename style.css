@@ -81,6 +81,8 @@ body {
    justify-content: space-between;
    background-color: rgb(34, 34, 34);
    height: 85px;
+      padding-left:16px;
+
 }
 
 .header>* {
@@ -232,11 +234,10 @@ body {
    padding: 12px;
    position: fixed;
    width: 72vw;
-   min-height: 80px;
+   min-height: 40px;
    justify-content: center;
    align-items: center;
 }
-
 
 .songbtn {
    justify-content: center;
@@ -250,9 +251,10 @@ body {
 
 .hamburger {
    display: none;
+   cursor: pointer;
 }
 
-.hamburgericon{
+.hamburgericon {
    justify-content: center;
    align-items: center;
    gap: 14px;
@@ -336,20 +338,34 @@ body {
 @media (max-width: 1400px) {
 
    .left {
-      position: absolute;
+      position: fixed;
+      top: 0;
       left: -100%;
-      transition: all .3s;
-      z-index: 1;
-      width: 433px;
+      transition: all .3s ease;
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
       background-color: black;
+   }
+
+   .left .cross {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 28px;
+      cursor: pointer;
    }
 
    .right {
       width: 100vw;
+            margin-left:0;
+
    }
 
    .playbar {
       width: 95vw;
+      left: 2.5vw;
+      right: auto;
    }
 
    .hamburger {
