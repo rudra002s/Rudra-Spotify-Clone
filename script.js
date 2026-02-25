@@ -51,8 +51,8 @@ const playMusic = (track, pause = false) => {
 
 async function main() {
 
-    // Get the list of all the songs - passing "songs/car" as the folder
-    songs = await getSongs("songs/car");
+    // Get the list of all the songs 
+    songs = await getSongs("songs/LoveHIts");
 
     let savedSong = localStorage.getItem("lastSong")
     let encodedSavedSong = encodeURIComponent(savedSong)
@@ -150,10 +150,18 @@ async function main() {
 
     })
 
-    // This is your original volume listener, now working with the rest of the code
+    //Add an event listener to volume
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         console.log(e, e.target, e.target.value)
         currentSong.volume = parseInt(e.target.value) / 100
+    })
+
+    // load playlist when card is clicked
+    Array.from(document.getElementsByClassName("card")).forEach(e => {
+        e.addEventListener("click",async item=>{
+            console.log(item,item.target.dataset)
+            songs = await getSongs(`songs/${item.target.dataset.folder}`);
+        })
     })
 
 }
