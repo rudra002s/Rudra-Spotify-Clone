@@ -24,7 +24,7 @@ async function getSongs(folder) {
     let div = document.createElement("div");
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
-    let songs = [];
+    songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
@@ -32,41 +32,9 @@ async function getSongs(folder) {
             songs.push(songName);
         }
     }
-    return songs;
-}
 
-const playMusic = (track, pause = false) => {
-    currentSong.src = `/${currFolder}/` + track
-
-    localStorage.setItem("lastSong", track)
-
-    if (!pause) {
-        currentSong.play()
-    }
-
-    document.querySelector(".songinfo").innerHTML = decodeURI(track)
-    document.querySelector(".songtime").innerHTML = "00:00/00:00"
-
-}
-
-async function main() {
-
-    // Get the list of all the songs 
-    songs = await getSongs("songs/LoveHIts");
-
-    let savedSong = localStorage.getItem("lastSong")
-    let encodedSavedSong = encodeURIComponent(savedSong)
-
-    if (encodedSavedSong && songs.includes(encodedSavedSong)) {
-        playMusic(encodedSavedSong, true)
-    } else {
-        playMusic(songs[0], true)
-    }
-
-    let songUL = document
-        .querySelector(".songList")
+    let songUL = document.querySelector(".songList")
         .getElementsByTagName("ul")[0];
-
     songUL.innerHTML = "";
     for (const song of songs) {
         songUL.innerHTML =
@@ -90,6 +58,38 @@ async function main() {
             playMusic(songName + ".mp3");
         })
     })
+
+}
+
+const playMusic = (track, pause = false) => {
+    currentSong.src = `/${currFolder}/` + track
+
+    localStorage.setItem("lastSong", track)
+
+    if (!pause) {
+        currentSong.play()
+    }
+
+    document.querySelector(".songinfo").innerHTML = decodeURI(track)
+    document.querySelector(".songtime").innerHTML = "00:00/00:00"
+
+}
+
+async function main() {
+
+    // Get the list of all the songs 
+    await getSongs("songs/LoveHIts");
+
+    let savedSong = localStorage.getItem("lastSong")
+    let encodedSavedSong = encodeURIComponent(savedSong)
+
+    if (encodedSavedSong && songs.includes(encodedSavedSong)) {
+        playMusic(encodedSavedSong, true)
+    } else {
+        playMusic(songs[0], true)
+    }
+
+
 
     //Attach an element listener to previous,play,forward
     play.addEventListener("click", () => {
@@ -158,9 +158,9 @@ async function main() {
 
     // load playlist when card is clicked
     Array.from(document.getElementsByClassName("card")).forEach(e => {
-        e.addEventListener("click",async item=>{
-            console.log(item,item.target.dataset)
-            songs = await getSongs(`songs/${item.target.dataset.folder}`);
+        e.addEventListener("click", async item => {
+            console.log(item, item.currentTarget.dataset)
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
         })
     })
 
