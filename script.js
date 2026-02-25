@@ -1,6 +1,7 @@
 console.log("LETS GO");
 let currentSong = new Audio();
 let songs;
+let currFolder;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -16,8 +17,9 @@ function secondsToMinutesSeconds(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/");
+async function getSongs(folder) {
+    currFolder = folder;
+    let a = await fetch(`http://127.0.0.1:3000/${folder}/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -27,8 +29,8 @@ async function getSongs() {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
             let songName =
-                element.href.split("/songs/")[1] ||
-                element.href.split("%5Csongs%5C")[1];
+                element.href.split(`/${folder}/`)[1] ||
+                element.href.split(`%5C${folder}%5C`)[1];
             songs.push(songName);
         }
     }
@@ -37,7 +39,7 @@ async function getSongs() {
 
 const playMusic = (track, pause = false) => {
     // let audio=new Audio("/songs/"+track)
-    currentSong.src = "/songs/" + track
+    currentSong.src = `/${currFolder}/` + track
 
     localStorage.setItem("lastSong", track)
 
@@ -74,7 +76,7 @@ async function main() {
 
 
     // Get the list of all the songs
-    songs = await getSongs();
+    songs = await getSongs("songs/love");
 
     let savedSong = localStorage.getItem("lastSong")
     let encodedSavedSong = encodeURIComponent(savedSong)
