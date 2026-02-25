@@ -370,11 +370,16 @@ body {
    display: none;
 }
 
-.volume{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 12px;
+.volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer; /* Makes it feel like a button */
+}
+
+.range input {
+    cursor: pointer;
 }
 
 @media (max-width: 1400px) {

@@ -28,9 +28,7 @@ async function getSongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            let songName =
-                element.href.split(`/${folder}/`)[1] ||
-                element.href.split(`%5C${folder}%5C`)[1];
+            let songName = element.href.replaceAll("%5C", "/").split(`/${folder}/`)[1];
             songs.push(songName);
         }
     }
@@ -38,7 +36,6 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    // let audio=new Audio("/songs/"+track)
     currentSong.src = `/${currFolder}/` + track
 
     localStorage.setItem("lastSong", track)
@@ -52,31 +49,10 @@ const playMusic = (track, pause = false) => {
 
 }
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/");
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    let songs = [];
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            let splitArray = element.href.split(/songs\/|%5Csongs%5C/);
-            if (splitArray.length > 1) {
-                songs.push(splitArray[1]);
-            }
-        }
-    }
-    return songs;
-}
-
 async function main() {
 
-
-
-    // Get the list of all the songs
-    songs = await getSongs("songs/love");
+    // Get the list of all the songs - passing "songs/car" as the folder
+    songs = await getSongs("songs/car");
 
     let savedSong = localStorage.getItem("lastSong")
     let encodedSavedSong = encodeURIComponent(savedSong)
@@ -90,6 +66,8 @@ async function main() {
     let songUL = document
         .querySelector(".songList")
         .getElementsByTagName("ul")[0];
+
+    songUL.innerHTML = "";
     for (const song of songs) {
         songUL.innerHTML =
             songUL.innerHTML + `<li> 
@@ -97,7 +75,7 @@ async function main() {
                   <div class="info">
                     <div>${song.replaceAll("%20", " ").replaceAll(".mp3", "")}</div>
                   </div>
-                  <div class=""playnow>
+                  <div class="playnow">
                     <span>Play Now</span>
                     <img class="invert" src="playNow.svg" alt="">
                   </div> </li>`;
@@ -153,10 +131,9 @@ async function main() {
     //Add an event listener to previous and forward
     previous.addEventListener("click", () => {
         console.log("Previous Clicked")
-        console.log(currentSong)
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
 
-        if ((index - 1) >=0) {
+        if ((index - 1) >= 0) {
             playMusic(songs[index - 1])
         }
     })
@@ -173,10 +150,10 @@ async function main() {
 
     })
 
-    //Add an event listener to volume
+    // This is your original volume listener, now working with the rest of the code
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-        console.log(e,e.target,e.target.value)
-        currentSong.volume = parseInt(e.target.value)/100
+        console.log(e, e.target, e.target.value)
+        currentSong.volume = parseInt(e.target.value) / 100
     })
 
 }
