@@ -75,6 +75,7 @@ const playMusic = (track, pause = false) => {
 
 }
 
+
 async function main() {
 
     // Get the list of all the songs 
@@ -89,7 +90,8 @@ async function main() {
         playMusic(songs[0], true)
     }
 
-
+    //Display all the albums on this page
+    displayAlbums(0)
 
     //Attach an element listener to previous,play,forward
     play.addEventListener("click", () => {
