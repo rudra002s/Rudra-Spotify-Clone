@@ -40,6 +40,13 @@ h1 {
     margin-block: 0;
 }
 
+.or{
+    color: white;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 .social-buttons {
     display: flex;
     flex-direction: column;
@@ -109,5 +116,13 @@ input {
 }
 
 .SignBtn{
-    font-weight: 400;
+    font-weight: 700;
+    align-items: center;
+    background-color: initial;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    min-inline-size: 0;
+    position: relative;
+    transition-property: color, transform;
 }
