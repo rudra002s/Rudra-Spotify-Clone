@@ -10,23 +10,68 @@
 
 <body>
     <div class="container">
-        <img src="logo.svg" alt="">
+        
+            <img class="logo" src="logo.svg" alt="">
 
         <h1>Welcome back</h1>
         <label>Email or username</label>
         <input type="text" placeholder="Email or username">
         <button class="continueBtn">Continue</button>
         <div class="or">or</div>
-        <button class="continueBtn">Continue with Google</button>
-        <button class="continueBtn">Continue with Phone Number</button>
-        <button class="continueBtn">Continue with Facebook</button>
-        <button class="continueBtn">Continue with Apple</button>
+        <div class="social-buttons">
+
+            <button class="social-btn">
+                <span class="icon">
+                    <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.8-.4 1.2-.3 1 .3 2.1.5 3.2.5.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.1 22.2 1.8 13.9 1.8 3.6 1.8 2.9 2.3 2.4 3 2.4h4.2c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.2.5 3.2.1.4 0 .9-.3 1.2l-2 2z" />
+                    </svg>
+                </span>
+                Continue with phone number
+            </button>
+
+            <button class="social-btn">
+                <span class="icon">
+                    <svg width="20" height="20" viewBox="0 0 48 48">
+                        <path fill="#EA4335"
+                            d="M24 9.5c3.2 0 6.1 1.1 8.3 3.2l6.2-6.2C34.9 2.5 29.8 0 24 0 14.6 0 6.4 5.4 2.5 13.3l7.4 5.7C12.1 13 17.6 9.5 24 9.5z" />
+                        <path fill="#34A853"
+                            d="M46.1 24.5c0-1.5-.1-3-.4-4.5H24v9h12.5c-.5 2.7-2 5-4.2 6.5l6.6 5.1c3.9-3.6 6.2-8.9 6.2-16.1z" />
+                        <path fill="#4A90E2"
+                            d="M10 28c-1-2.7-1-5.7 0-8.4l-7.4-5.7C.8 17.3 0 20.6 0 24c0 3.4.8 6.7 2.6 9.6L10 28z" />
+                        <path fill="#FBBC05"
+                            d="M24 48c6.5 0 11.9-2.1 15.9-5.7l-6.6-5.1c-1.8 1.2-4.2 2-9.3 2-6.4 0-11.9-3.5-14-8.7l-7.4 5.7C6.4 42.6 14.6 48 24 48z" />
+                    </svg>
+                </span>
+                Continue with Google
+            </button>
+
+            <button class="social-btn">
+                <span class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                        <path
+                            d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.6.2 2.6.2v2.9h-1.5c-1.5 0-2 1-2 2v2.4h3.4l-.5 3.5h-2.9v8.4C19.6 23.1 24 18.1 24 12.1z" />
+                    </svg>
+                </span>
+                Continue with Facebook
+            </button>
+
+            <button class="social-btn">
+                <span class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M16.7 13.3c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8-.7 0-1.9-.8-3.2-.8-1.6 0-3.1.9-3.9 2.3-1.7 2.9-.4 7.3 1.2 9.6.8 1.1 1.7 2.3 2.9 2.3 1.1 0 1.6-.7 3-.7s1.9.7 3.1.7c1.3 0 2.1-1.1 2.9-2.2.9-1.3 1.3-2.5 1.3-2.6-.1 0-2.4-.9-2.4-3.6zM14.5 4.6c.6-.7 1-1.7.9-2.6-.9 0-2 .6-2.7 1.3-.6.6-1.1 1.6-1 2.5 1 .1 2-.5 2.8-1.2z" />
+                    </svg>
+                </span>
+                Continue with Apple
+            </button>
+        </div>
 
         <div>
             <p>Don't have an account?</p>
         </div>
 
-        <button class="continueBtn">Sign up</button>
+        <button class="SignBtn">Sign up</button>
 
         <div class="extra">
             <p class="e-91185-text encore-text-marginal encore-internal-color-text-subdued" data-encore-id="text">This
