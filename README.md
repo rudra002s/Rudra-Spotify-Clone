@@ -10,7 +10,6 @@ A responsive Spotify-inspired music player built using **HTML, CSS, and JavaScri
 - Next & Previous controls
 - Progress bar
 - Playlist cards
-- Smooth animations
 
 ## 🛠️ Tech Stack
 
