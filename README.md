@@ -19,4 +19,4 @@ A responsive Spotify-inspired music player built using **HTML, CSS, and JavaScri
 
 
 
-If you found this project helpful, consider giving it a ⭐.
+If you found this project good, consider giving it a ⭐.
