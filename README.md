@@ -1,5 +1,5 @@
 ﻿# Rudra-Spotify-Clone
-# 🎵 Spotify Clone
+#  Spotify Clone
 
 A responsive Spotify-inspired music player built using **HTML, CSS, and JavaScript**. This project recreates the look and feel of Spotify's web player while implementing basic music playback functionality.
 
